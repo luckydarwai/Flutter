@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -32,17 +34,28 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Container "),
+        title: Text("Flutter Buttons"),
       ),
-      body: Text(
-        "Text Style",
-        style: TextStyle(
-          color: Colors.white,
-          backgroundColor: Colors.black,
-          fontWeight: FontWeight.bold,
-          fontFamily: 'RobotoMono',
-          fontSize: 20,
-        ),
+      body: Column(
+        children: [
+          TextButton(
+            child: Text("click here"),
+            onPressed: () {
+              print("click here");
+            },
+            onLongPress: () => print("long pressed !!"),
+          ),
+          ElevatedButton(
+            child: Text("Click ME"),
+            onPressed: () {
+              print("clicked me !!");
+            },
+          ),
+          OutlinedButton(
+            child: Text("press Me"),
+            onPressed: () => print("got it!"),
+          )
+        ],
       ),
     );
   }
