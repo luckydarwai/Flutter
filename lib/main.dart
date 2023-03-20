@@ -32,15 +32,31 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Container "),
+        title: Center(child: Text("Flutter Inkwell Widget ")),
       ),
       body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          child: Text("My container"),
-          color: Colors.blue,
-          alignment: Alignment.center,
+        child: InkWell(
+          onTap: () {
+            print('Tapped !!');
+          },
+          onDoubleTap: () => print("Double Tapped!!"),
+          onLongPress: () => print("Long pressed!!"),
+          onHover: (value) => print('color changed!!'),
+          child: Container(
+            height: 200,
+            width: 200,
+            color: Colors.amber,
+            child: Center(
+                child: InkWell(
+                    onTap: () => print('Tapped on Text'),
+                    child: Text(
+                      "click Me !!",
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontSize: 25,
+                      ),
+                    ))),
+          ),
         ),
       ),
     );
