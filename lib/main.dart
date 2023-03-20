@@ -31,34 +31,88 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text("Flutter Inkwell Widget ")),
-      ),
-      body: Center(
-        child: InkWell(
-          onTap: () {
-            print('Tapped !!');
-          },
-          onDoubleTap: () => print("Double Tapped!!"),
-          onLongPress: () => print("Long pressed!!"),
-          onHover: (value) => print('color changed!!'),
-          child: Container(
-            height: 200,
-            width: 200,
-            color: Colors.amber,
-            child: Center(
-                child: InkWell(
-                    onTap: () => print('Tapped on Text'),
-                    child: Text(
-                      "click Me !!",
-                      style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 25,
-                      ),
-                    ))),
-          ),
+        appBar: AppBar(
+          title: Center(child: Text("Flutter Scrollview Widget")),
         ),
-      ),
-    );
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.amber,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(11),
+                          height: 200,
+                          width: 200,
+                          color: Colors.redAccent,
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(11),
+                          height: 200,
+                          width: 200,
+                          color: Colors.black,
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(11),
+                          height: 200,
+                          width: 200,
+                          color: Colors.deepOrange,
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(11),
+                          height: 200,
+                          width: 200,
+                          color: Colors.deepPurple,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.blueAccent,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.greenAccent,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.yellowAccent,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.purpleAccent,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.pinkAccent,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.brown,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.orange,
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
