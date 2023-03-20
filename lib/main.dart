@@ -32,17 +32,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Container "),
+        title: Text("Flutter Images !"),
       ),
       body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          child: Text("My container"),
-          color: Colors.blue,
-          alignment: Alignment.center,
-        ),
-      ),
+          child: Container(
+              height: 100,
+              width: 100,
+              child: Image.asset("assets/images/rose2.jpg"))),
     );
   }
 }
