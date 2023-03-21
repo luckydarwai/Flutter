@@ -30,89 +30,90 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var names = [
+      'Raman',
+      'RamanuJan',
+      'Ashu',
+      'Ravi',
+      'Lucky',
+      'Lalit',
+      'Sanjay'
+    ];
     return Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("Flutter Scrollview Widget")),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.amber,
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.all(11),
-                          height: 200,
-                          width: 200,
-                          color: Colors.redAccent,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(11),
-                          height: 200,
-                          width: 200,
-                          color: Colors.black,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(11),
-                          height: 200,
-                          width: 200,
-                          color: Colors.deepOrange,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.all(11),
-                          height: 200,
-                          width: 200,
-                          color: Colors.deepPurple,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.blueAccent,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.greenAccent,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.yellowAccent,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.purpleAccent,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.pinkAccent,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.brown,
-                ),
-                Container(
-                  margin: const EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.orange,
-                ),
-              ],
-            ),
-          ),
-        ));
+      appBar: AppBar(
+        title: Center(child: Text("Flutter Listview Widget")),
+      ),
+      // statically defined data
+      // body: ListView(
+      //   scrollDirection: Axis.horizontal,
+      //   reverse: true,
+      //   children: [
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text(
+      //         "One",
+      //         style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+      //       ),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text(
+      //         "Two",
+      //         style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+      //       ),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text(
+      //         "Three",
+      //         style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+      //       ),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text(
+      //         "Four",
+      //         style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+      //       ),
+      //     ),
+      //     Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: Text(
+      //         "Five",
+      //         style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+      //       ),
+      //     )
+      //   ],
+      // )
+      // Dynamically defined data
+      // body: ListView.builder(
+      //   itemBuilder: (context, index) {
+      //     return Text(
+      //       names[index],
+      //       style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+      //     );
+      //   },
+      //   // reverse: true,
+      //   itemExtent: 200,
+      //   itemCount: names.length,
+      // ),
+      // for seperating each items using listview.seperated
+      body: ListView.separated(
+        itemBuilder: (context, index) {
+          return Text(
+            names[index],
+            style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400),
+          );
+        },
+        // reverse: true,
+        itemCount: names.length,
+        separatorBuilder: (context, index) {
+          return Divider(
+            height: 100,
+            thickness: 4,
+          );
+        },
+      ),
+    );
   }
 }
