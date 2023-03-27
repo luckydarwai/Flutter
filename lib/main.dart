@@ -30,31 +30,40 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var arrNames = ['Lukcy', 'Ravi', 'OM', 'Jay', "Lalit"];
     return Scaffold(
-      appBar: AppBar(
-        title: Center(child: const Text("Flutter Expanded Widget ")),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 250),
-        child: Row(
-          children: [
-            Expanded(
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.blueAccent,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                width: 50,
-                height: 100,
-                color: Colors.blueGrey,
-              ),
-            ),
-          ],
+        appBar: AppBar(
+          title: Center(child: const Text("Flutter CircleAvatar Widget ")),
         ),
-      ),
-    );
+        // body: Center(
+        //   child: Container(
+        //     height: 120,
+        //     width: 120,
+        //     child: CircleAvatar(
+        //       backgroundImage: AssetImage('assets/images/myphoto1.jpg'),
+        //       backgroundColor: Colors.transparent,
+        //       // backgroundColor: Colors.blueGrey,
+        //     ),
+        //   ),
+        // ),
+        body: Center(
+          child: CircleAvatar(
+            child: Container(
+              width: 60,
+              height: 60,
+              child: Column(children: [
+                Container(
+                  width: 60,
+                  height: 40,
+                  child: Image.asset('assets/images/myphoto1.jpg'),
+                ),
+                Text("Name")
+              ]),
+            ),
+            backgroundColor: Colors.greenAccent,
+            maxRadius: 90,
+            // minRadius:10,
+          ),
+        ));
   }
 }
