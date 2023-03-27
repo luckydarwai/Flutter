@@ -9,12 +9,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Learning',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'MY Home Page'),
     );
   }
 }
@@ -32,27 +32,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text("Flutter Container ")),
+        title: Center(child: const Text("Flutter Expanded Widget ")),
       ),
-      body: Center(
-        child: Container(
-          height: 150,
-          width: 150,
-          child: const Text("My container"),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(25),
-              border: Border.all(
-                width: 2,
-                color: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 250),
+        child: Row(
+          children: [
+            Expanded(
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.blueAccent,
               ),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 11,
-                  spreadRadius: 7,
-                )
-              ]),
+            ),
+            Expanded(
+              child: Container(
+                width: 50,
+                height: 100,
+                color: Colors.blueGrey,
+              ),
+            ),
+          ],
         ),
       ),
     );
