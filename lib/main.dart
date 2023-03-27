@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -32,15 +32,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flutter Container "),
+        title: Center(child: const Text("Flutter Container ")),
       ),
       body: Center(
         child: Container(
-          height: 100,
-          width: 100,
-          child: Text("My container"),
-          color: Colors.blue,
+          height: 150,
+          width: 150,
+          child: const Text("My container"),
           alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: Colors.amber,
+              borderRadius: BorderRadius.circular(25),
+              border: Border.all(
+                width: 2,
+                color: Colors.black,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 11,
+                  spreadRadius: 7,
+                )
+              ]),
         ),
       ),
     );
