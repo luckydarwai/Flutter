@@ -30,40 +30,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var arrNames = ['Lukcy', 'Ravi', 'OM', 'Jay', "Lalit"];
     return Scaffold(
-        appBar: AppBar(
-          title: Center(child: const Text("Flutter CircleAvatar Widget ")),
-        ),
-        // body: Center(
-        //   child: Container(
-        //     height: 120,
-        //     width: 120,
-        //     child: CircleAvatar(
-        //       backgroundImage: AssetImage('assets/images/myphoto1.jpg'),
-        //       backgroundColor: Colors.transparent,
-        //       // backgroundColor: Colors.blueGrey,
-        //     ),
-        //   ),
-        // ),
-        body: Center(
-          child: CircleAvatar(
-            child: Container(
-              width: 60,
-              height: 60,
-              child: Column(children: [
-                Container(
-                  width: 60,
-                  height: 40,
-                  child: Image.asset('assets/images/myphoto1.jpg'),
-                ),
-                Text("Name")
-              ]),
-            ),
-            backgroundColor: Colors.greenAccent,
-            maxRadius: 90,
-            // minRadius:10,
-          ),
-        ));
+      appBar: AppBar(
+        title: const Center(child: Text("Flutter CircleAvatar Widget ")),
+      ),
+      body: const Text(
+        "Hello, My Name is Lucky Darwai",
+        style: TextStyle(fontFamily: 'MyFont'),
+      ),
+    );
   }
 }
