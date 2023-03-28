@@ -32,7 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("Flutter CircleAvatar Widget ")),
+        title: const Center(child: Text("Custom-Font ")),
       ),
       body: const Text(
         "Hello, My Name is Lucky Darwai",
