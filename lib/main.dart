@@ -43,24 +43,15 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Center(child: Text("Styles and Themes")),
         ),
-        body: Container(
-          child: Column(
-            children: [
-              Text(
-                "Text One",
-                style: Theme.of(context).textTheme.headline1,
-              ),
-              Text('Text Two', style: Theme.of(context).textTheme.subtitle1),
-              Text(
-                'Text Three',
-                style: Theme.of(context).textTheme.headline1,
-              ),
-              Text('Text Four', style: Theme.of(context).textTheme.subtitle1),
-              Text(
-                'from utils ',
-                style: myTextStyle21(),
-              )
-            ],
+        body: Center(
+          child: Card(
+            elevation: 20,
+            shadowColor: Colors.pink[900],
+            shape: Border.all(),
+            child: Text(
+              'Shodaw by Card',
+              style: Theme.of(context).textTheme.headline1,
+            ),
           ),
         ));
   }
