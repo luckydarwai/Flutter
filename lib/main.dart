@@ -30,23 +30,28 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var time = DateTime.now();
     return Scaffold(
         appBar: AppBar(
           title: Center(child: Text("Text Field")),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Email",
-                border: OutlineInputBorder(),
-                suffix: Icon(
-                  Icons.person,
-                  color: Colors.blue,
-                  size: 43,
+        body: Center(
+          child: Container(
+            height: 300,
+            width: 200,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Current time--> ${time.hour}:${time.minute}:${time.second}",
+                  style: TextStyle(fontSize: 20),
                 ),
-              ),
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text("Update Time?"))
+              ],
             ),
           ),
         ));
