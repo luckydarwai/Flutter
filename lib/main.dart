@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var time = DateTime.now();
     return Scaffold(
         appBar: AppBar(
-          title: Center(child: Text("Text Field")),
+          title: Center(child: Text("Date/Time picker")),
         ),
         body: Center(
           child: Container(
@@ -44,14 +44,35 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Current time--> ${DateFormat('Hms').format(time)}",
+                  'Select Date',
                   style: TextStyle(fontSize: 20),
                 ),
                 ElevatedButton(
-                    onPressed: () {
-                      setState(() {});
+                    onPressed: () async {
+                      DateTime? datePicked = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2023),
+                        lastDate: DateTime(2026),
+                      );
+                      if (datePicked != null) {
+                        print(
+                            "Date Selected: ${datePicked.day}-${datePicked.month}-${datePicked.year}");
+                      }
                     },
-                    child: Text("Update Time?"))
+                    child: Text('Select Date')),
+                ElevatedButton(
+                    onPressed: () async {
+                      TimeOfDay? pickedTime = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay.now(),
+                          initialEntryMode: TimePickerEntryMode.input);
+                      if (pickedTime != null) {
+                        print(
+                            "Date Selected: ${pickedTime.hour}-${pickedTime.minute}");
+                      }
+                    },
+                    child: Text('Select Time'))
               ],
             ),
           ),
