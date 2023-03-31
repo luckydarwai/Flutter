@@ -31,18 +31,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Container "),
-      ),
-      body: Center(
-        child: Container(
-          height: 100,
-          width: 100,
-          child: Text("My container"),
-          color: Colors.blue,
-          alignment: Alignment.center,
+        appBar: AppBar(
+          title: Center(child: Text("Text Field")),
         ),
-      ),
-    );
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "Email",
+                border: OutlineInputBorder(),
+                suffix: Icon(
+                  Icons.person,
+                  color: Colors.blue,
+                  size: 43,
+                ),
+              ),
+            ),
+          ),
+        ));
   }
 }
