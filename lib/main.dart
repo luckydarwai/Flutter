@@ -23,30 +23,19 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Center(child: Text("Grid View")),
           ),
-          body: GridView.extent(
-            maxCrossAxisExtent: 300,
-            mainAxisSpacing: 11,
-            crossAxisSpacing: 11,
-            children: [
-              Container(
-                color: arrColors[0],
-              ),
-              Container(
-                color: arrColors[1],
-              ),
-              Container(
-                color: arrColors[2],
-              ),
-              Container(
-                color: arrColors[3],
-              ),
-              Container(
-                color: arrColors[4],
-              ),
-              Container(
-                color: arrColors[7],
-              ),
-            ],
+          body: GridView.builder(
+            itemBuilder: (context, index) {
+              return Container(
+                height: 300,
+                width: 100,
+                color: arrColors[index],
+              );
+            },
+            itemCount: arrColors.length,
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
+                crossAxisSpacing: 11,
+                mainAxisSpacing: 11),
           )),
     );
   }
