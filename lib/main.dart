@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: Center(child: Text("Grid View")),
           ),
-          body: GridView.count(
-            crossAxisSpacing: 11,
+          body: GridView.extent(
+            maxCrossAxisExtent: 300,
             mainAxisSpacing: 11,
-            crossAxisCount: 4,
+            crossAxisSpacing: 11,
             children: [
               Container(
                 color: arrColors[0],
@@ -42,12 +42,6 @@ class MyApp extends StatelessWidget {
               ),
               Container(
                 color: arrColors[4],
-              ),
-              Container(
-                color: arrColors[5],
-              ),
-              Container(
-                color: arrColors[6],
               ),
               Container(
                 color: arrColors[7],
